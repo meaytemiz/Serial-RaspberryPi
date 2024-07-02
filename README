@@ -1,0 +1,4 @@
+I wanted to communicate via RS485 with my Raspberry Pi 4 device. I am sharing this code because of a problem I encountered.
+Rasbian is installed as OS. I tried different communication codes I found on the internet. As a result, I saw that the data was sent properly, but the data coming from the device I wanted to communicate with could not be read properly by the Raspberry Pi. After much effort, I realized that the problem was caused by the switching of the enable pin used to send and listen to data on the Rs485 Line.
+When switching the Enable pin, a problem occurs with the BCM and BOARD options, which are in the GPIO library and contain pin numbers. Therefore, be sure to apply the "GPIO.setmode(GPIO.BOARD)" line in RS485 Modbus or RS232 communication protocols.
+I hope it will be useful to you. Best regards.
